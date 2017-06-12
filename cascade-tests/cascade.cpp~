@@ -1,0 +1,142 @@
+#include <iostream>
+#include <opencv2/opencv.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/video/video.hpp>
+#include <opencv2/objdetect/objdetect.hpp>
+#include <string>
+#include <time.h>
+#include <sstream>
+
+using namespace cv;
+using namespace std;
+
+void draw_rect(Mat &frame, Rect rect){
+	rectangle(frame, rect, Scalar(0,0,255), 1, 8, 0);
+}
+
+
+bool detect_face(Mat &mat){
+	cv::Mat input_mat = mat.clone();    
+
+	std::vector<cv::Rect> faces;
+	cv::Mat gray_mat;
+	cv::cvtColor(input_mat,gray_mat,CV_BGR2GRAY);
+
+	this->face_cascade.detectMultiScale(gray_mat, faces, 1.3, 5, 0|CV_HAAR_SCALE_IMAGE, cv::Size(96,96));
+
+	if(faces.size() > 0){
+		for(unsigned int i = 0; i < faces.size();i ++){
+			cv::rectangle(input_mat, faces[i], cv::Scalar(255,0,0), 2, 8, 0);
+		}
+
+		input_mat.copyTo(mat);
+
+		return true;
+	}
+	return false;
+}
+
+void process(){
+
+	Mat gray_frame;
+	Mat resized_frame;
+	Mat hog_frame;
+
+	float threshold = 2;
+	float scale = 1.1;
+	cap.read(frame);
+	
+	float size_factor = 1.0;//(float)(640.0/frame.cols);
+	
+	int cascade_detect = 0;
+
+	std::vector<Rect> rects;
+
+	for(int i = 0; i < 10; i++){	
+		while(true){
+        	bool bSuccess = cap.read(frame); // read a new frame from video
+	
+		if (!bSuccess)
+                {
+                        cout << "End of stream" << endl;
+			cap.open("../move.webm");
+			cout << "Threashold: "  << threshold << endl;
+			cout << "Scale: " << scale << endl;
+			cout << "Detected rects: "  << cascade_detect << endl;
+			cout << "X-----------------X" << endl;
+			cascade_detect = 0;
+			
+			break;
+                }
+
+		resize(frame, resized_frame, Size(0,0), size_factor, size_factor, INTER_NEAREST);
+		//transpose(resized_frame, hog_frame);
+		//flip(hog_frame, resized_frame, 0);
+		hog_frame = resized_frame.clone();
+		
+		cvtColor(resized_frame,gray_frame, CV_BGR2GRAY);
+		equalizeHist(gray_frame, gray_frame);		
+		
+		cascade.detectMultiScale(gray_frame, rects, scale, threshold, 0, Size(30,30));
+
+		if(rects.size() > 0){
+			for(int i = 0; i<rects.size(); i++){
+				draw_rect(resized_frame, rects[i]);
+			}
+			cascade_detect += rects.size();
+		}
+		
+		imshow("cascade", resized_frame);
+
+		waitKey(66);
+		}
+	}
+}
+
+
+int main(int argc, char* argv[])
+{
+    
+    	cout << "Cascade Classifier. v1.2" << endl;
+
+	VideoCapture cap("rtsp://admin:huawei123@192.168.10.180:554/LiveMedia/ch1/Media1");
+
+//--------------------------------------*********--------------------------------------------
+//	VideoCapture cap("rtsp://adm-helder:fullsec123@192.168.10.181:554/H264");
+//--------------------------------------*********--------------------------------------------
+//	VideoCapture cap("../move.webm");
+//--------------------------------------*********--------------------------------------------
+/*
+	char *video;
+	
+	if(argc > 1){
+		video = argv[1];
+		cout << video << endl;
+	}else{
+		cout << "Missing Cam URL Argument..." << endl;
+		return 0;
+	}
+	VideoCapture cap(video);
+*/
+//--------------------------------------*********--------------------------------------------
+
+	string cascade_location = "../../opencv-2.4.12/data/haarcascades/haarcascade_frontalface_alt.xml";	
+	CascadeClassifier cascade;
+
+	cascade.load(cascade_location);	
+
+	if (!cap.isOpened())  // if not success, exit program
+	{
+        	cout << "Cannot open the video cam" << endl;
+		return -1;
+	}
+	Mat frame;
+	
+	while(1){
+		
+	}
+
+
+	return 0;
+}
