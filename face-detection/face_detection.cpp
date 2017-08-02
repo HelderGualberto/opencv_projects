@@ -42,12 +42,12 @@ int faces_detected = 0;
 //Reduction size factor to compute move detection
 float fatorg = 0.4;
 
-//	cv::VideoCapture cap("rtsp://admin:huawei123@10.1.1.0:554/LiveMedia/ch1/Media1");
+	cv::VideoCapture cap("rtsp://admin:huawei123@10.1.1.0:554/LiveMedia/ch1/Media1");
 
 //--------------------------------------*********--------------------------------------------
 //	cv::VideoCapture cap("rtsp://viwer:foscam123@10.1.1.5:554/videoMain");
 //--------------------------------------make*********--------------------------------------------
-	cv::VideoCapture cap("../data/face.webm");
+//	cv::VideoCapture cap("../data/face.webm");
 //--------------------------------------*********--------------------------------------------
 /*
 	char *video;
@@ -295,7 +295,7 @@ bool detect_face(cv::Mat &mat){
 
 	cv::cvtColor(mat,gray_mat,CV_BGR2GRAY);
 
-	cascade.detectMultiScale(gray_mat, faces, 1.3, 2, 0|CV_HAAR_SCALE_IMAGE, cv::Size(50,50));
+	cascade.detectMultiScale(gray_mat, faces, 1.3, 2, 0|CV_HAAR_SCALE_IMAGE, cv::Size(96,96));
 	if(faces.size() > 0){
 		
 		

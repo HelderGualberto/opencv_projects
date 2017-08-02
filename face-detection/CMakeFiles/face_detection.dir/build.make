@@ -34,14 +34,11 @@ RM = /usr/bin/cmake -E remove -f
 # Escaping for special characters.
 EQUALS = =
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/opencv/face-detection
+CMAKE_SOURCE_DIR = /home/adm-helder/opencv_projects/face-detection
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/opencv/face-detection
+CMAKE_BINARY_DIR = /home/adm-helder/opencv_projects/face-detection
 
 # Include any dependencies generated for this target.
 include CMakeFiles/face_detection.dir/depend.make
@@ -54,17 +51,17 @@ include CMakeFiles/face_detection.dir/flags.make
 
 CMakeFiles/face_detection.dir/face_detection.cpp.o: CMakeFiles/face_detection.dir/flags.make
 CMakeFiles/face_detection.dir/face_detection.cpp.o: face_detection.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/user/opencv/face-detection/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/adm-helder/opencv_projects/face-detection/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/face_detection.dir/face_detection.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/face_detection.dir/face_detection.cpp.o -c /home/user/opencv/face-detection/face_detection.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/face_detection.dir/face_detection.cpp.o -c /home/adm-helder/opencv_projects/face-detection/face_detection.cpp
 
 CMakeFiles/face_detection.dir/face_detection.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/face_detection.dir/face_detection.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/user/opencv/face-detection/face_detection.cpp > CMakeFiles/face_detection.dir/face_detection.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/adm-helder/opencv_projects/face-detection/face_detection.cpp > CMakeFiles/face_detection.dir/face_detection.cpp.i
 
 CMakeFiles/face_detection.dir/face_detection.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/face_detection.dir/face_detection.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/user/opencv/face-detection/face_detection.cpp -o CMakeFiles/face_detection.dir/face_detection.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/adm-helder/opencv_projects/face-detection/face_detection.cpp -o CMakeFiles/face_detection.dir/face_detection.cpp.s
 
 CMakeFiles/face_detection.dir/face_detection.cpp.o.requires:
 .PHONY : CMakeFiles/face_detection.dir/face_detection.cpp.o.requires
@@ -129,6 +126,6 @@ CMakeFiles/face_detection.dir/clean:
 .PHONY : CMakeFiles/face_detection.dir/clean
 
 CMakeFiles/face_detection.dir/depend:
-	cd /home/user/opencv/face-detection && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/opencv/face-detection /home/user/opencv/face-detection /home/user/opencv/face-detection /home/user/opencv/face-detection /home/user/opencv/face-detection/CMakeFiles/face_detection.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/adm-helder/opencv_projects/face-detection && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adm-helder/opencv_projects/face-detection /home/adm-helder/opencv_projects/face-detection /home/adm-helder/opencv_projects/face-detection /home/adm-helder/opencv_projects/face-detection /home/adm-helder/opencv_projects/face-detection/CMakeFiles/face_detection.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/face_detection.dir/depend
 

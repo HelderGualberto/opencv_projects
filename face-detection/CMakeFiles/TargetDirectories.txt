@@ -1,1 +1,1 @@
-/home/user/opencv/face-detection/CMakeFiles/face_detection.dir
+/home/adm-helder/opencv_projects/face-detection/CMakeFiles/face_detection.dir

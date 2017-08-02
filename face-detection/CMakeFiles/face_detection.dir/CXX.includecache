@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/user/opencv/face-detection/face_detection.cpp
+/home/adm-helder/opencv_projects/face-detection/face_detection.cpp
 iostream
 -
 opencv2/opencv.hpp
