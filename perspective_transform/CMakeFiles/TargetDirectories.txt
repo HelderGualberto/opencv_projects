@@ -1,0 +1,3 @@
+/home/adm-helder/opencv_projects/perspective_transform/CMakeFiles/edit_cache.dir
+/home/adm-helder/opencv_projects/perspective_transform/CMakeFiles/rebuild_cache.dir
+/home/adm-helder/opencv_projects/perspective_transform/CMakeFiles/deformation_analisys_point.dir

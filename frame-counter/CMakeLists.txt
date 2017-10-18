@@ -1,4 +1,4 @@
-PROJECT(body_detection)
+PROJECT(fps)
 
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 if(COMMAND cmake_policy)
@@ -8,9 +8,9 @@ endif(COMMAND cmake_policy)
 FIND_PACKAGE( OpenCV REQUIRED )
 
 # Declare the target (an executable)
-ADD_EXECUTABLE(body_detection bodydetect.cpp)
+ADD_EXECUTABLE(fps fps.cpp)
 
-TARGET_LINK_LIBRARIES(body_detection ${OpenCV_LIBS})
+TARGET_LINK_LIBRARIES(fps ${OpenCV_LIBS})
 
 SET(GCC_COVETAGE_COMPILE_FLAGS "-std=c++11")
 ADD_DEFINITIONS(${GCC_COVERAGE_COMPILE_FLAGS})

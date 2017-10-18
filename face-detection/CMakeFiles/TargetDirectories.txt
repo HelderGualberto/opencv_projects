@@ -1,1 +1,3 @@
+/home/adm-helder/opencv_projects/face-detection/CMakeFiles/rebuild_cache.dir
+/home/adm-helder/opencv_projects/face-detection/CMakeFiles/edit_cache.dir
 /home/adm-helder/opencv_projects/face-detection/CMakeFiles/face_detection.dir
