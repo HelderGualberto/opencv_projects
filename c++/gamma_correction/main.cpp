@@ -20,6 +20,7 @@ std::vector<cv::Mat> read_images_from_file(char * data_names, const string prefi
 	vector<cv::Mat> imgs;
 	string filename;
 
+	cout << "Loading images..." << endl << endl;
 	while(getline(names,filename)){
 		filename = prefix + filename;
 		cout << filename << endl;
@@ -29,7 +30,15 @@ std::vector<cv::Mat> read_images_from_file(char * data_names, const string prefi
 
 	names.close();
 
+	cout << "Loaded images!" << endl;
 	return imgs;
+}
+
+std::string int_to_string(int i){
+	std::ostringstream s;
+	s << i;
+	std::string converted(s.str());
+	return converted;
 }
 
 void correct_gamma(float gamma, cv::Mat &mat){
@@ -50,19 +59,16 @@ void correct_gamma(float gamma, cv::Mat &mat){
 
 int main(int argc, char ** argv)
 {
-  	
-  	vector<cv::Mat> imgs = read_images_from_file("../../data/dataset/data.names", "../../data/dataset/predic/");
+  	int c = 0;
+  	vector<cv::Mat> imgs = read_images_from_file("../../data/dataset/data.names", "../../data/dataset/input/");
 
   	while(imgs.size() > 0){
   		cv::Mat mat = imgs.back();
-  		cv::imshow("No gamma correction", mat);
-  		correct_gamma(5.0, mat);
-  		cv::imshow("Gamma 0.2", mat);
-  		correct_gamma(2.2, mat);
-  		cv::imshow("Gamma 0.3", mat);
-  		cv::waitKey(5000);
-
+  		correct_gamma(20.0, mat);
   		imgs.pop_back();
+  		string path = "../../data/dataset/output/" + int_to_string(c) + ".jpg";
+  		cv::imwrite(path, mat);
+  		c++;
   	}
 
   return 0;
