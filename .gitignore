@@ -1,3 +1,4 @@
-data/
+*.bin
 data/*
-
+c++/face-detection/CMakeFiles/
+*.cmake
