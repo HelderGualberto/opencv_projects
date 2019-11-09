@@ -1,3 +1,0 @@
-/home/adm-helder/opencv_projects/frame-counter/CMakeFiles/rebuild_cache.dir
-/home/adm-helder/opencv_projects/frame-counter/CMakeFiles/edit_cache.dir
-/home/adm-helder/opencv_projects/frame-counter/CMakeFiles/fps.dir

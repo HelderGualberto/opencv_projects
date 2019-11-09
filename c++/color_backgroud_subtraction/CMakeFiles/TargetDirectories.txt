@@ -1,3 +1,0 @@
-/home/adm-helder/opencv_projects/color_backgroud_subtraction/CMakeFiles/edit_cache.dir
-/home/adm-helder/opencv_projects/color_backgroud_subtraction/CMakeFiles/rebuild_cache.dir
-/home/adm-helder/opencv_projects/color_backgroud_subtraction/CMakeFiles/bkg_detection.dir

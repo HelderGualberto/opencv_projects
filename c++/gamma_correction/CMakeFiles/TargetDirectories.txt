@@ -1,3 +1,0 @@
-/home/adm-helder/opencv_projects/c++/gamma_correction/CMakeFiles/rebuild_cache.dir
-/home/adm-helder/opencv_projects/c++/gamma_correction/CMakeFiles/edit_cache.dir
-/home/adm-helder/opencv_projects/c++/gamma_correction/CMakeFiles/gamma_correction.dir
